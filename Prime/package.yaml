@@ -1,0 +1,50 @@
+name:                Prime
+version:             0.1.0.0
+github:              "jeongoon/Prime"
+license:             BSD3
+author:              "Myoungjin Jeon"
+maintainer:          "jeongoon@gmail.com"
+copyright:           "Open Software License 3.0"
+
+extra-source-files:
+- README.md
+- ChangeLog.md
+
+# Metadata used when publishing your package
+# synopsis:            Short description of your package
+# category:            Web
+
+# To avoid duplicated efforts in documentation and dealing with the
+# complications of embedding Haddock markup inside cabal files, it is
+# common to point users to the README.md file.
+description:         Please see the README on GitHub at <https://github.com/jeongoon/Prime#readme>
+
+dependencies:
+- base >= 4.7 && < 5
+
+library:
+  source-dirs: src
+
+#executables:
+#  Prime-exe:
+#    main:                Main.hs
+#    source-dirs:         app
+#    ghc-options:
+#    - -threaded
+#    - -rtsopts
+#    - -with-rtsopts=-N
+#    dependencies:
+#    - Prime
+
+tests:
+  Prime-test:
+    main:                Spec.hs
+    source-dirs:         test
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - Prime
+    - hspec
+
