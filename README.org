@@ -1,0 +1,5 @@
+** My Iteration(Solution) for Exercism.org
+
+I'm tying to learn rust programming langauge.
+I'm not proud of my solution yet,
+But I hope so one day!

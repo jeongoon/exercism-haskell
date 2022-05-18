@@ -14,12 +14,12 @@ convert n =
    , (7, "Plong")
    ] :: [ (Int, Text) ])
 
-    where
-      helper (k, sound) acc 
-        | n `rem` k == 0 =
+  where
+    helper (k, sound) acc 
+      | n `rem` k == 0 =
           case acc of
             Nothing ->
               Just sound
             _ ->
               (sound <>) <$> acc
-        | otherwise = acc
+      | otherwise = acc
