@@ -1,0 +1,52 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.34.4.
+--
+-- see: https://github.com/sol/hpack
+
+name:           SpaceAge
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/jeongoon/SpaceAge#readme>
+homepage:       https://github.com/jeongoon/SpaceAge#readme
+bug-reports:    https://github.com/jeongoon/SpaceAge/issues
+author:         Myoungjin Jeon
+maintainer:     jeongoon@gmail.com
+copyright:      Open Software License 3.0
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+    ChangeLog.md
+
+source-repository head
+  type: git
+  location: https://github.com/jeongoon/SpaceAge
+
+library
+  exposed-modules:
+      SpaceAge
+  other-modules:
+      Paths_SpaceAge
+  hs-source-dirs:
+      src
+  build-depends:
+      base >=4.7 && <5
+    , containers
+    , hspec
+  default-language: Haskell2010
+
+test-suite SpaceAge-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Paths_SpaceAge
+  hs-source-dirs:
+      test
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      SpaceAge
+    , base >=4.7 && <5
+    , containers
+    , hspec
+  default-language: Haskell2010
