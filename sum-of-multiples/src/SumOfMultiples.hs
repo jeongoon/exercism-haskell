@@ -2,7 +2,7 @@ module SumOfMultiples (sumOfMultiples) where
 
 import Data.List (sort)
 
-unionSort :: Integral a => [a] -> [a] -> [a]
+unionSort :: Ord a => [a] -> [a] -> [a]
 unionSort [] ys = ys
 unionSort xs [] = xs
 unionSort xs@(x:xt) ys@(y:yt) =
@@ -11,12 +11,12 @@ unionSort xs@(x:xt) ys@(y:yt) =
     EQ -> x : unionSort xt yt
     GT -> y : unionSort xs yt
 
-foldt :: Integral a => [[a]] -> [a]
+foldt :: Ord a => [[a]] -> [a]
 foldt [] = []
 foldt ([]:_) = [] -- foldt get sorted list only : if left empty: so will right.
 foldt ((x:xs):t) = x : unionSort xs (foldt (pairs t))
 
-pairs :: Integral a => [[a]] -> [[a]]
+pairs :: Ord a => [[a]] -> [[a]]
 -- edge cases ...
 pairs [] = []
 pairs ([]:_) = [] -- left always has longer list; no need to go further
