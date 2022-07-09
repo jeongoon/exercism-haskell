@@ -1,0 +1,36 @@
+name: acronym
+version: 1.7.0.11
+
+dependencies:
+  - base
+
+library:
+  exposed-modules:
+  - Acronym
+  - InProgressAcronym
+  - YetAnotherAcronym
+
+  source-dirs: src
+  ghc-options: -Wall
+  dependencies:
+  - text
+
+tests:
+  test:
+    main: Tests.hs
+    source-dirs: test
+    dependencies:
+      - acronym
+      - hspec
+
+benchmarks:
+  abbreviate-by-boundaries:
+    main: Bench.hs
+    source-dirs: benchmark
+    dependencies:
+      - text
+      - acronym
+      - hspec
+      - criterion
+    ghc-options:
+      - -O2
