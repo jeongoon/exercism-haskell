@@ -7,12 +7,10 @@ import Criterion.Main (defaultMain)
 
 import qualified Data.Text as T
 import qualified Acronym as A
-import qualified AcronymSalkyus as AS
-import qualified InProgressAcronym as IA
-import qualified YetAnotherAcronym as YA
-import qualified Onlined as O
-import qualified OnlinedRevised as OR
-import qualified OnlinedRevised as OR2
+import qualified AcronymFewHelper as AF
+import qualified AcronymMoreHelper as AM
+import qualified AcronymFoldl as AFL
+import qualified AcronymFoldl as AFL2
 
 allInOne = T.concat [ "Portable Network Graphics"
                     , "Ruby on Rails"
@@ -31,18 +29,26 @@ allInOne' = T.unpack allInOne
 main :: IO ()
 main = do
   defaultMain [
-    bgroup "Onlined Revised"
-      [ bench "All in one (1)" $ nf OR.abbreviate allInOne'
+    bgroup "Warming Up Code"
+      [ bench "All in one (1)" $ nf AF.abbreviate allInOne'
       ]
-    , bgroup "Onlined Revised 2"
-      [ bench "All in one (1)" $ nf OR2.abbreviate allInOne'
-      , bench "All in one (2)" $ nf OR2.abbreviate allInOne'
+    , bgroup "Original"
+      [ bench "All in one (1)" $ nf A.abbreviate allInOne'
+      , bench "All in one (2)" $ nf A.abbreviate allInOne'
       ]
-    , bgroup "Onlined Revised"
-      [ bench "All in one (1)" $ nf OR.abbreviate allInOne'
-      , bench "All in one (2)" $ nf OR.abbreviate allInOne'
+    , bgroup "Few Helper"
+      [ bench "All in one (1)" $ nf AF.abbreviate allInOne'
+      , bench "All in one (2)" $ nf AF.abbreviate allInOne'
       ]
-    , bgroup "Onlined Revised"
-      [ bench "All in one (1)" $ nf OR.abbreviate allInOne'
+    , bgroup "More Helper"
+      [ bench "All in one (1)" $ nf AM.abbreviate allInOne'
+      , bench "All in one (2)" $ nf AM.abbreviate allInOne'
+      ]
+    , bgroup "Foldl"
+      [ bench "All in one (1)" $ nf AFL.abbreviate allInOne'
+      , bench "All in one (2)" $ nf AFL.abbreviate allInOne'
+      ]
+    , bgroup "Closing Code"
+      [ bench "All in one (1)" $ nf A.abbreviate allInOne'
       ]
     ]

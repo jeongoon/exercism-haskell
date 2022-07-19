@@ -7,11 +7,9 @@ dependencies:
 library:
   exposed-modules:
   - Acronym
-  - AcronymSalkyus
-  - InProgressAcronym
-  - YetAnotherAcronym
-  - Onlined
-  - OnlinedRevised
+  - AcronymFewHelper
+  - AcronymMoreHelper
+  - AcronymFoldl
 
   source-dirs: src
   ghc-options: -Wall

@@ -11,13 +11,11 @@ build-type:     Simple
 library
   exposed-modules:
       Acronym
-      AcronymSalkyus
-      InProgressAcronym
-      YetAnotherAcronym
-      Onlined
-      OnlinedRevised
+      AcronymFewHelper
+      AcronymMoreHelper
+      AcronymFoldl
   other-modules:
-      OnlinedRevised2
+      AcronymFoldl2
       Paths_acronym
   hs-source-dirs:
       src
