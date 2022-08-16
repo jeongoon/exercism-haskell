@@ -5,12 +5,13 @@ dependencies:
   - base
 
 library:
-  exposed-modules: Deque
+  exposed-modules:
+  - Deque
+
   source-dirs: src
   ghc-options: -Wall
-  # dependencies:
-  # - foo       # List here the packages you
-  # - bar       # want to use in your solution.
+  dependencies:
+    - stm
 
 tests:
   test:
@@ -19,3 +20,14 @@ tests:
     dependencies:
       - linked-list
       - hspec
+
+benchmarks:
+  deque-bench:
+    main: Bench.hs
+    source-dirs: benchmark
+    dependencies:
+      - linked-list
+      - criterion
+    ghc-options:
+      - -O2
+
